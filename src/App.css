@@ -7,8 +7,8 @@
 }
 
 :root {
-  --grad-1: rgb(130, 94, 205);
-  --grad-2: rgb(61, 138, 84);
+  --grad-1: rgb(136, 77, 155);
+  --grad-2: rgb(218, 141, 106);
 }
 
 #root {
@@ -24,7 +24,6 @@
   margin: 20px;
   height: 95vh;
   max-width: 1200px;
-  background-color: orange;
   position: relative;
   z-index: 2;
 }
@@ -39,16 +38,25 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+.ayar {
+  position: absolute;
+  top: 16px;
+  left: 26px;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+}
+
+.ayar:hover {
+  cursor: pointer;
+}
 .corner1 {
   min-width: 250px;
   width: 30%;
   height: 350px;
-  background: linear-gradient(
-    135deg,
-    var(--grad-1) 0%,
-    var(--grad-2) 50%,
-    var(--grad-1) 100%
-  );
+
   position: absolute;
   top: -30px;
   left: -20px;
@@ -60,12 +68,7 @@
   min-width: 250px;
   width: 30%;
   height: 350px;
-  background: linear-gradient(
-    135deg,
-    var(--grad-1) 0%,
-    var(--grad-2) 50%,
-    var(--grad-1) 100%
-  );
+
   position: absolute;
   bottom: -18px;
   right: -20px;
@@ -77,12 +80,7 @@
   min-width: 250px;
   width: 30%;
   height: 232px;
-  background: linear-gradient(
-    135deg,
-    var(--grad-1) 0%,
-    var(--grad-2) 50%,
-    var(--grad-1) 100%
-  );
+
   position: absolute;
   bottom: 19px;
   left: -3px;
@@ -91,7 +89,6 @@
 }
 
 .left-side {
-  min-width: 350px;
   width: 50%;
   height: 350px;
   background-color: #1d1d20;
@@ -107,7 +104,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  min-width: 350px;
 }
 
 .inline-content {
@@ -127,23 +123,21 @@
 .left-side .content p {
   color: white;
   font-size: 0.9em;
-  font-weight: 100;
+  font-weight: 200;
   text-align: justify;
   line-height: 25px;
   text-indent: 25px;
 }
 
 .right-side {
-  min-width: 250px;
   width: 30%;
   height: 350px;
-
   padding: 20px 0 20px 10px;
   position: relative;
 }
 
 .right-side h1 {
-  color: white;
+  color: #1d1d20;
   font-size: 25px;
   font-weight: 400;
   margin-bottom: 30px;
@@ -153,7 +147,7 @@
 
 .right-side span {
   color: white;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 100;
   text-align: justify;
   line-height: 25px;
@@ -163,18 +157,25 @@
 }
 
 .right-side span:hover {
-  color: white;
-  font-size: 1em;
-  font-weight: 100;
-  text-align: justify;
-  line-height: 25px;
-  width: fit-content;
-  position: relative;
   transition: all 0.5s linear;
-  transform: scale(1.2);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
+.right-side span::after {
+  content: "";
+  height: 1px;
+  width: 0%;
+  background: linear-gradient(270deg, var(--grad-2) 0%, var(--grad-1) 100%);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  transition: all 0.5s linear;
+}
 .right-side span:hover::after {
   content: "";
   height: 1px;
@@ -205,15 +206,104 @@
 .corner4 {
   width: 86px;
   height: 99px;
-  background: linear-gradient(
-    135deg,
-    var(--grad-1) 0%,
-    var(--grad-2) 50%,
-    var(--grad-1) 100%
-  );
+
   position: absolute;
   bottom: 176px;
   left: 5px;
   z-index: -1;
   border-radius: 3px;
+}
+
+.contact p {
+  color: white;
+  list-style: none;
+}
+
+@media screen and (max-width: 767px) {
+  .left-side {
+    min-width: none !important;
+    width: 100%;
+    height: 350px;
+    background-color: #1d1d20;
+    padding: 30px 40px 30px 10px;
+    position: relative;
+    margin-top: 0px;
+  }
+
+  .right-side .right-content {
+    background-color: #1d1d20;
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    position: absolute;
+    z-index: 3;
+    border-radius: 5px;
+    bottom: -76px;
+    width: 100%;
+  }
+  .content {
+    min-width: none;
+  }
+  .right-side {
+    width: 100%;
+    height: fit-content;
+    padding: 20px 0 20px 10px;
+    position: relative;
+  }
+  .right-side h1 {
+    display: none;
+  }
+
+  .inline-container {
+    width: 100%;
+    height: 100%;
+    background-color: #1d1d20;
+    position: inherit;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .corner1 {
+    min-width: 250px;
+    width: 30%;
+    height: 350px;
+    background: linear-gradient(
+      135deg,
+      var(--grad-1) 0%,
+      var(--grad-2) 50%,
+      var(--grad-1) 100%
+    );
+    position: absolute;
+    top: -9px;
+    left: -6px;
+    z-index: 1;
+    border-radius: 10px 75px 0 105px;
+  }
+  .corner3 {
+    display: none;
+  }
+  .corner2 {
+    display: none;
+  }
+  .corner4 {
+    width: 96%;
+    height: 25px;
+    background: linear-gradient(
+      135deg,
+      var(--grad-1) 0%,
+      var(--grad-2) 50%,
+      var(--grad-1) 100%
+    );
+    position: absolute;
+    bottom: -33px;
+    left: 19px;
+    z-index: -1;
+    border-radius: 3px;
+  }
 }
