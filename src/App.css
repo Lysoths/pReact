@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,500&family=Roboto:wght@300;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --grad-1: rgb(130, 94, 205);
+  --grad-2: rgb(61, 138, 84);
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1d1d20;
+}
+
+.container {
+  width: 90%;
+  margin: 20px;
+  height: 95vh;
+  max-width: 1200px;
+  background-color: orange;
+  position: relative;
+  z-index: 2;
+}
+.inline-container {
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d20;
+  position: inherit;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.corner1 {
+  min-width: 250px;
+  width: 30%;
+  height: 350px;
+  background: linear-gradient(
+    135deg,
+    var(--grad-1) 0%,
+    var(--grad-2) 50%,
+    var(--grad-1) 100%
+  );
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  z-index: 1;
+  border-radius: 10px 75px 0 105px;
+}
+
+.corner2 {
+  min-width: 250px;
+  width: 30%;
+  height: 350px;
+  background: linear-gradient(
+    135deg,
+    var(--grad-1) 0%,
+    var(--grad-2) 50%,
+    var(--grad-1) 100%
+  );
+  position: absolute;
+  bottom: -18px;
+  right: -20px;
+  z-index: 1;
+  border-radius: 10px 75px 0 105px;
+}
+
+.corner3 {
+  min-width: 250px;
+  width: 30%;
+  height: 232px;
+  background: linear-gradient(
+    135deg,
+    var(--grad-1) 0%,
+    var(--grad-2) 50%,
+    var(--grad-1) 100%
+  );
+  position: absolute;
+  bottom: 19px;
+  left: -3px;
+  z-index: -1;
+  border-radius: 0;
+}
+
+.left-side {
+  min-width: 350px;
+  width: 50%;
+  height: 350px;
+  background-color: #1d1d20;
+  padding: 30px 40px 30px 10px;
+  position: relative;
+  margin-top: 120px;
+}
+
+.content {
+  position: inherit;
+  z-index: 4;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-width: 350px;
+}
+
+.inline-content {
+  display: flex;
+  width: fit-content;
+  justify-content: space-between;
+}
+
+.left-side .content h1 {
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-indent: 25px;
+}
+
+.left-side .content p {
+  color: white;
+  font-size: 0.9em;
+  font-weight: 100;
+  text-align: justify;
+  line-height: 25px;
+  text-indent: 25px;
+}
+
+.right-side {
+  min-width: 250px;
+  width: 30%;
+  height: 350px;
+
+  padding: 20px 0 20px 10px;
+  position: relative;
+}
+
+.right-side h1 {
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-indent: 25px;
+  position: relative;
+}
+
+.right-side span {
+  color: white;
+  font-size: 1em;
+  font-weight: 100;
+  text-align: justify;
+  line-height: 25px;
+  width: fit-content;
+  position: relative;
+  transition: all 0.5s linear;
+}
+
+.right-side span:hover {
+  color: white;
+  font-size: 1em;
+  font-weight: 100;
+  text-align: justify;
+  line-height: 25px;
+  width: fit-content;
+  position: relative;
+  transition: all 0.5s linear;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.right-side span:hover::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(270deg, var(--grad-2) 0%, var(--grad-1) 100%);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  transition: all 0.5s linear;
+}
+
+.right-side .right-content {
+  background-color: #1d1d20;
+  height: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: inherit;
+  z-index: 3;
+  border-radius: 5px;
+}
+
+.corner4 {
+  width: 86px;
+  height: 99px;
+  background: linear-gradient(
+    135deg,
+    var(--grad-1) 0%,
+    var(--grad-2) 50%,
+    var(--grad-1) 100%
+  );
+  position: absolute;
+  bottom: 176px;
+  left: 5px;
+  z-index: -1;
+  border-radius: 3px;
+}
